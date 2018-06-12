@@ -28,11 +28,17 @@ Route::get('api/:ver/rank', 'api/:ver.rank/index');
 //更新
 Route::get('api/:ver/init', 'api/:ver.index/init');
 
+//首页
+Route::get('api/:ver/home', 'api/:ver.home/read');
+
 //获取验证码
-Route::resource('api/:ver/identify', 'api/:ver.identify');
+Route::post('api/:ver/getcode', 'api/:ver.getcode/save');
 
 //登录
 Route::post('api/:ver/login', 'api/:ver.login/save');
+
+//退出登录
+Route::post('api/:ver/logout', 'api/:ver.logout/save');
 
 //用户信息
 Route::resource('api/:ver/user', 'api/:ver.user');

@@ -18,7 +18,7 @@ use app\common\lib\SmsUtils;
  * Class Index
  * @package app\api\controller\v1
  */
-class Identify extends Common
+class GetCode extends Common
 {
     /**
      * 设置短信验证码
@@ -36,9 +36,9 @@ class Identify extends Common
 
         $id = input('post.phone');
         if(SmsUtils::sendSms($id)){
-            return success('ok', []);
+            return success('验证码发送成功', []);
         }else{
-            return fail('发送失败', [], 403);
+            return fail('验证码发送失败', [], 403);
         }
     }
 }

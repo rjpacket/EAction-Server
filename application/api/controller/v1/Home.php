@@ -17,9 +17,9 @@ use app\common\lib\exception\ApiException;
  * Class Index
  * @package app\api\controller\v1
  */
-class Index extends Common
+class Home extends Common
 {
-    public function index()
+    public function read()
     {
         $heads = model('News')->getIndexHeadNormalNews();
         $heads = $this->getDealNews($heads);

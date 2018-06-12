@@ -63,21 +63,60 @@ class Common extends Controller
         //验签 sign 加密需要客户端做，服务端解密
 
         //基础参数校验
-        if(empty($headers['sign'])){
-            throw new ApiException('缺少参数sign', 400);
+//        if(empty($headers['sign'])){
+//            throw new ApiException('缺少参数sign', 400);
+//        }
+        if(empty($headers['version'])){
+            throw new ApiException('缺少参数version', 400);
         }
 
         if(!in_array($headers['app_type'], config('app.apptypes'))){
             throw new ApiException('缺少参数appType', 400);
         }
 
-        //需要sign
-        if(!IAuth::checkSignPass($headers)){
-            throw new ApiException('参数sign不合法', 400);
+        if(empty($headers['version_code'])){
+            throw new ApiException('缺少参数version_code', 400);
         }
 
+        if(empty($headers['device_id'])){
+            throw new ApiException('缺少参数device_id', 400);
+        }
+
+        if(empty($headers['model'])){
+            throw new ApiException('缺少参数model', 400);
+        }
+
+        if(empty($headers['imei'])){
+            throw new ApiException('缺少参数imei', 400);
+        }
+
+        if(empty($headers['application_id'])){
+            throw new ApiException('缺少参数application_id', 400);
+        }
+
+        if(empty($headers['mac_address'])){
+            throw new ApiException('缺少参数mac_address', 400);
+        }
+
+        if(empty($headers['channel'])){
+            throw new ApiException('缺少参数channel', 400);
+        }
+
+        if(empty($headers['brand'])){
+            throw new ApiException('缺少参数brand', 400);
+        }
+
+        if(empty($headers['osversion'])){
+            throw new ApiException('缺少参数osversion', 400);
+        }
+
+        //需要sign  暂时不加sign判断
+//        if(!IAuth::checkSignPass($headers)){
+//            throw new ApiException('参数sign不合法', 400);
+//        }
+
         //请求过的sign保存，唯一性检查
-        Cache::set($headers['sign'], 1, config('app.app_sign_cache_time'));
+//        Cache::set($headers['sign'], 1, config('app.app_sign_cache_time'));
 
         //保存header头的数据，子类可以直接使用
         $this -> headers = $headers;

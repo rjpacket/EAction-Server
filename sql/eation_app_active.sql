@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 12, 2018 at 01:03 AM
+-- Generation Time: Jun 12, 2018 at 03:10 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.2.1
 
@@ -36,15 +36,23 @@ CREATE TABLE `eation_app_active` (
   `device_id` varchar(100) NOT NULL DEFAULT '',
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `model` varchar(20) NOT NULL DEFAULT ''
+  `model` varchar(20) NOT NULL DEFAULT '',
+  `imei` varchar(50) NOT NULL DEFAULT '',
+  `application_id` varchar(50) NOT NULL DEFAULT '',
+  `mac_address` varchar(50) NOT NULL DEFAULT '',
+  `channel` varchar(50) NOT NULL DEFAULT '',
+  `brand` varchar(30) NOT NULL DEFAULT '',
+  `time_stamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `osversion` varchar(50) NOT NULL DEFAULT '',
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `eation_app_active`
 --
 
-INSERT INTO `eation_app_active` (`id`, `version`, `app_type`, `version_code`, `device_id`, `create_time`, `update_time`, `model`) VALUES
-(1, 1, 'android', '1.0.2', '123', 1528388214, 1528388214, 'HUAWEI-P20');
+INSERT INTO `eation_app_active` (`id`, `version`, `app_type`, `version_code`, `device_id`, `create_time`, `update_time`, `model`, `imei`, `application_id`, `mac_address`, `channel`, `brand`, `time_stamp`, `osversion`, `user_id`) VALUES
+(1, 1, 'android', '1.0.2', '123', 1528388214, 1528388214, 'HUAWEI-P20', '', '', '', '', '', 0, '', 0);
 
 --
 -- Indexes for dumped tables
@@ -54,7 +62,8 @@ INSERT INTO `eation_app_active` (`id`, `version`, `app_type`, `version_code`, `d
 -- Indexes for table `eation_app_active`
 --
 ALTER TABLE `eation_app_active`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables

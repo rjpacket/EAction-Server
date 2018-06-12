@@ -123,7 +123,6 @@ class Comment extends AuthBase
             return success('获取评论列表成功', $result);
         }else{
             return fail('获取评论列表失败', [], 403);
-
         }
     }
 }

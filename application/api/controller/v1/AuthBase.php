@@ -37,7 +37,7 @@ class AuthBase extends Common
     {
         parent::_initialize();
         if(!$this->isLogin()){
-            throw new ApiException('未登录', 403);
+            throw new ApiException('需要登录', 403);
         }
     }
 
