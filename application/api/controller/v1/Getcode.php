@@ -18,7 +18,7 @@ use app\common\lib\SmsUtils;
  * Class Index
  * @package app\api\controller\v1
  */
-class GetCode extends Common
+class Getcode extends Common
 {
     /**
      * 设置短信验证码
