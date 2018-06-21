@@ -38,3 +38,35 @@
 |参数|类型|描述|
 |:-|:-|:-|
 |url|post|/api/v1/logout|
+
+### 5.通用上传图片接口
+
+#### 5.1 直接请求后台支持的上传类型，目前支持七牛和本地两种
+
+|参数|类型|描述|
+|:-|:-|:-|
+|url|post|/api/v1/uploadImageType|
+
+#### 5.2 如果是七牛，前端上传之后拿到ImageUrl调用更新接口，参考更换头像接口
+
+#### 5.3 如果是本地，需要继续调用下面接口
+
+|参数|类型|描述|
+|:-|:-|:-|
+|url|post|/api/v1/localUploadImage|
+|file|图片文件，低于2M|记住设置ContentType为from-data(存疑)|
+
+### 6.更换头像接口
+|参数|类型|描述|
+|:-|:-|:-|
+|url|post|/api/v1/image|
+|image|String|七牛返回的图片地址|
+
+### 7.更新用户信息
+|参数|类型|描述|
+|:-|:-|:-|
+|url|post|/api/v1/user|
+|username|String|用户名|
+|sex|String|用户性别|
+|signature|String|个性签名|
+|password|String|密码，密码的修改需要验证是否匹配之前的密码|

@@ -43,7 +43,7 @@ Route::post('api/:ver/logout', 'api/:ver.logout/save');
 //用户信息
 Route::resource('api/:ver/user', 'api/:ver.user');
 
-//设置头像
+//设置头像，先获取上传方法
 Route::post('api/:ver/image', 'api/:ver.image/save');
 
 //点赞
@@ -54,3 +54,8 @@ Route::get('api/:ver/upvote/:id', 'api/:ver.upvote/read');
 //评论
 Route::post('api/:ver/comment', 'api/:ver.comment/save');
 Route::get('api/:ver/comment/:id', 'api/:ver.comment/read');
+
+//社区发布图片的方式
+Route::post('api/:ver/uploadImageType', 'api/:ver.socialImage/uploadImageType');
+//直接传到图片到服务器，服务器传七牛
+Route::post('api/:ver/localUploadImage', 'api/:ver.socialImage/localUploadImage');

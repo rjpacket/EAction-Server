@@ -36,7 +36,7 @@ class AuthBase extends Common
     public function _initialize()
     {
         parent::_initialize();
-        if(!$this->isLogin()){
+        if(!config('app_debug') && !$this->isLogin()){
             throw new ApiException('需要登录', 403);
         }
     }
