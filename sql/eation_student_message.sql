@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `eaction_student_message`
 --
 
-CREATE TABLE `eaction_student_message` (
+CREATE TABLE `eation_student_message` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(10) NOT NULL DEFAULT '',
   `sex` varchar(1) NOT NULL DEFAULT '',
@@ -47,7 +47,7 @@ CREATE TABLE `eaction_student_message` (
 --
 -- Indexes for table `eaction_student_message`
 --
-ALTER TABLE `eaction_student_message`
+ALTER TABLE `eation_student_message`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `phone` (`phone`);
 
@@ -58,7 +58,7 @@ ALTER TABLE `eaction_student_message`
 --
 -- AUTO_INCREMENT for table `eaction_student_message`
 --
-ALTER TABLE `eaction_student_message`
+ALTER TABLE `eation_student_message`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

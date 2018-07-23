@@ -47,7 +47,7 @@ class Student extends Common
                 return fail('上传数据失败', []);
             }
         }else{
-            $id = model('StudentMessage') -> insert($param);
+            $id = model('StudentMessage') -> add($param);
             if($id){
                 return success('上传数据成功', []);
             }else{
