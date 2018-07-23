@@ -15,6 +15,8 @@ use app\common\model\StudentMessage;
 class Student extends Common
 {
     public function save(){
+        header('Access-Control-Allow-Origin:*');
+
         $param = input('param.');
         if (empty($param['name'])) {
             return fail('姓名不能为空', [], 200);
