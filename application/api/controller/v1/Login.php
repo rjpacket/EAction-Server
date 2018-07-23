@@ -46,9 +46,11 @@ class Login extends Common
 
         //可以选择validate验证
         if($param['code']) {
-            $code = SmsUtils::checkSmsCache($param['phone']);
-            if ($code != $param['code']) {
-                return fail('验证码已失效', [], 403);
+            if(!config('app_debug')) {
+                $code = SmsUtils::checkSmsCache($param['phone']);
+                if ($code != $param['code']) {
+                    return fail('验证码已失效', [], 403);
+                }
             }
         }
 
@@ -112,7 +114,7 @@ class Login extends Common
 
             return success('登录成功', $result);
         }else{
-            return fail('登录失败', [], 403);
+            return fail('登录失败', []);
         }
     }
 }

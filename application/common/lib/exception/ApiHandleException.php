@@ -20,7 +20,7 @@ use think\exception\Handle;
 class ApiHandleException extends Handle
 {
     //状态码
-    public $httpCode = 500;
+    public $httpCode = 200;
 
     public function render(Exception $e)
     {

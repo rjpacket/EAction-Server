@@ -44,7 +44,7 @@ class User extends AuthBase
     /**
      * 修改用户数据
      */
-    public function update(){
+    public function save(){
         $postData = input('param.');
         //validate 校验
 
@@ -65,7 +65,7 @@ class User extends AuthBase
         }
 
         if(empty($data)){
-            return fail('没有数据', [], 503);
+            return fail('没有数据', []);
         }
 
         try {
@@ -73,10 +73,10 @@ class User extends AuthBase
             if($id){
                 return success('修改成功', []);
             }else{
-                return fail('修改失败', [], 503);
+                return fail('修改失败', []);
             }
         }catch (\Exception $e){
-            return fail('修改失败', [], 503);
+            return fail('修改失败', []);
         }
     }
 }

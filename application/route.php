@@ -59,3 +59,10 @@ Route::get('api/:ver/comment/:id', 'api/:ver.comment/read');
 Route::post('api/:ver/uploadImageType', 'api/:ver.socialImage/uploadImageType');
 //直接传到图片到服务器，服务器传七牛
 Route::post('api/:ver/localUploadImage', 'api/:ver.socialImage/localUploadImage');
+
+//社区发布动态接口
+Route::post('api/:ver/sendTalk', 'api/:ver.talk/sendTalk');
+Route::resource('api/:ver/talk', 'api/:ver.talk');
+
+//学生数据采集
+Route::post('api/:ver/student', 'api/:ver.student/save');

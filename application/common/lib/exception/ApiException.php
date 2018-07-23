@@ -18,7 +18,7 @@ class ApiException extends Exception
     public $httpCode = '';
     public $code = '';
 
-    public function __construct($message = "", $httpCode = 500, $code = 0)
+    public function __construct($message = "", $httpCode = 200, $code = 0)
     {
         $this->message = $message;
         $this->httpCode = $httpCode;

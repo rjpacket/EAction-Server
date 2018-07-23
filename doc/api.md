@@ -70,3 +70,17 @@
 |sex|String|用户性别|
 |signature|String|个性签名|
 |password|String|密码，密码的修改需要验证是否匹配之前的密码|
+
+### 8.发表社区动态
+|参数|类型|描述|
+|:-|:-|:-|
+|url|post|/api/v1/sendTalk|
+|content|String|发表的内容|
+|imageUrls|String|可选，逗号拼接的七牛图片地址|
+
+### 9.获取社区动态
+|参数|类型|描述|
+|:-|:-|:-|
+|url|get|/api/v1/talk|
+|page|int|页数， 从1开始|
+|size|int|每一页的个数， 默认10|

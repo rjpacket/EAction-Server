@@ -25,20 +25,20 @@ class Getcode extends Common
      */
     public function save(){
         if(!request() -> isPost()){
-            return fail('请求方式必须是post', [], 403);
+            return fail('请求方式必须是post', []);
         }
 
         //校验数据
         $validate = validate('Identify');
         if(!$validate -> check(input('post.'))){
-            return fail('手机号格式不正确', [], 403);
+            return fail('手机号格式不正确', []);
         }
 
         $id = input('post.phone');
         if(SmsUtils::sendSms($id)){
             return success('验证码发送成功', []);
         }else{
-            return fail('验证码发送失败', [], 403);
+            return fail('验证码发送失败', []);
         }
     }
 }

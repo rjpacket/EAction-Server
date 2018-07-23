@@ -47,6 +47,6 @@ function success($msg, $data = []){
  * @param int $httpCode
  * @return \think\response\Json
  */
-function fail($msg, $data = [], $httpCode = 500){
+function fail($msg, $data = [], $httpCode = 200){
     return show(config('code.api_call_fail'), $msg, $data, $httpCode);
 }

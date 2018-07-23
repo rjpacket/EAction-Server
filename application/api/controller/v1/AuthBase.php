@@ -36,8 +36,8 @@ class AuthBase extends Common
     public function _initialize()
     {
         parent::_initialize();
-        if(!config('app_debug') && !$this->isLogin()){
-            throw new ApiException('需要登录', 403);
+        if(!$this->isLogin()){
+            throw new ApiException('需要登录', 200);
         }
     }
 
@@ -56,7 +56,7 @@ class AuthBase extends Common
             return false;
         }
         list($realToken, $id) = explode('||', $accessToken);
-        $user = User::get(['token' => $realToken]);
+        $user = User::get(['id' => $id]);
         if(!$user || $user -> status != 1){
             return false;
         }
