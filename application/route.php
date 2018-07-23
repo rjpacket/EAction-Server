@@ -65,4 +65,4 @@ Route::post('api/:ver/sendTalk', 'api/:ver.talk/sendTalk');
 Route::resource('api/:ver/talk', 'api/:ver.talk');
 
 //学生数据采集
-Route::post('api/:ver/student', 'api/:ver.student/save');
+Route::resource('api/:ver/student', 'api/:ver.student');
