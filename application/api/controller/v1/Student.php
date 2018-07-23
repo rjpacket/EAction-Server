@@ -12,10 +12,11 @@ namespace app\api\controller\v1;
 use app\api\controller\Common;
 use app\common\model\StudentMessage;
 
+header('Access-Control-Allow-Origin:*');
+
 class Student extends Common
 {
     public function save(){
-        header('Access-Control-Allow-Origin:*');
 
         $param = input('param.');
         if (empty($param['name'])) {
