@@ -11,10 +11,11 @@ namespace app\api\controller\v1;
 
 use app\api\controller\Common;
 use app\common\model\StudentMessage;
+use think\Controller;
 
 header('Access-Control-Allow-Origin:*');
 
-class Student extends Common
+class Student extends Controller
 {
     public function save(){
 
